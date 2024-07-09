@@ -16,7 +16,10 @@ class RiwayatPendidikanController extends Controller
             'tanggal_mulai' => 'nullable|date',
             'tanggal_selesai' => 'nullable|date',
             'deskripsi' => 'nullable|string|max:255',
-            'biodata_id' => 'nullable|integer',
+            
+            // Input Data Sesuai Kolom Di Atas Saja Abaikan Yang Dibawah
+
+            // 'biodata_id' => 'nullable|integer',
         ]);
     
         if ($validator->fails()) {
@@ -47,10 +50,10 @@ class RiwayatPendidikanController extends Controller
         }
 
         $validator = Validator::make($request->all(), [
-            'name' => 'nullable|string|max:255',
-            'tanggal_mulai' => 'nullable|date',
-            'tanggal_selesai' => 'nullable|date',
-            'deskripsi' => 'nullable|string|max:255',
+            'name' => 'sometimes|nullable|string|max:255',
+            'tanggal_mulai' => 'sometimes|nullable|date',
+            'tanggal_selesai' => 'sometimes|nullable|date',
+            'deskripsi' => 'sometimes|nullable|string|max:255',
 
             // Input Data Sesuai Kolom Di Atas Saja Abaikan Yang Dibawah
 

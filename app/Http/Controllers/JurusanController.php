@@ -44,8 +44,8 @@ class JurusanController extends Controller
         }
 
         $validator = Validator::make($request->all(), [
-            'name' => 'sometimes|required|string',
-            'deskripsi' => 'sometimes|required|string',
+            'name' => 'sometimes|nullable|string',
+            'deskripsi' => 'sometimes|nullable|string',
         ]);
 
         if ($validator->fails()) {

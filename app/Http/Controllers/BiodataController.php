@@ -54,14 +54,19 @@ class BiodataController extends Controller
         }
 
         $validator = Validator::make($request->all(), [
-            'name' => 'sometimes|required|string',
-            'fullname' => 'sometimes|required|string',
-            'tanggal_lahir' => 'sometimes|required|date',
-            'anak' => 'sometimes|required|integer',
-            'foto' => 'nullable|image',
-            'jenis_kelamin' => 'sometimes|required|in:laki-laki,perempuan',
-            'pendidikan_ids' => 'sometimes|array',
-            'jurusan_ids' => 'sometimes|integer',
+            'name' => 'sometimes|nullable|string',
+            'fullname' => 'sometimes|nullable|string',
+            'tanggal_lahir' => 'sometimes|nullable|date',
+            'anak' => 'sometimes|nullable|integer',
+
+            // Input Data Sesuai Kolom Di Atas Saja Abaikan Yang Dibawah
+
+            // 'foto' => 'nullable|string',
+            // 'jenis_kelamin' => 'nullable|string|in:laki-laki,perempuan',
+            // 'pendidikan_ids' => 'nullable|array',
+            // 'jurusan_ids' => 'nullable|integer',
+            // 'riwayat_pendidikan_ids' => 'nullable|array',
+            // 'riwayat_pendidikan_count' => 'nullable|integer',
         ]);
 
         if ($validator->fails()) {
