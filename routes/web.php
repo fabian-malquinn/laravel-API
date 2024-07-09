@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BiodataController;
 use App\Http\Controllers\testingController;
 
 
@@ -24,3 +25,5 @@ Route::get('/test', function () {
 });
 
 Route::get('/testing', [testingController::class, 'testing'])->middleware('token');
+
+
